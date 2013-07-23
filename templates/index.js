@@ -1,5 +1,0 @@
-<section>
-    <h1>{{title}}</h1>
-    <div>{{description}}</div>
-</section>
-

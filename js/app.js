@@ -2,7 +2,8 @@
 
     function initialize() {
         var baseModel = new BaseModel();
-        var baseView = new BaseView({
+
+        baseView = new BaseView({
             model: baseModel
         });
     }

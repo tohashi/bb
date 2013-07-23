@@ -1,13 +1,19 @@
 module.exports = (grunt) ->
-    grunt.initConfig
+  grunt.initConfig
 
-      connect:
-        server:
-          options:
-            port: 3000
-            base: './'
-            keepalive: true
+    connect:
+      livereload:
+        options:
+          port: 3000
+          base: './'
+          keepalive: true
 
-    grunt.loadNpmTasks('grunt-contrib-connect')
+    regarde:
+      files: '*'
+      tasks: ['livereload']
 
-    grunt.registerTask('server', ['connect'])
+  grunt.loadNpmTasks 'grunt-contrib-connect'
+  grunt.loadNpmTasks 'grunt-regarde'
+  grunt.loadNpmTasks 'grunt-contrib-livereload'
+
+  grunt.registerTask 'server', ['livereload-start', 'connect', 'regarde']
