@@ -1,13 +1,10 @@
 (function(window, undefined) {
 
-    function initialize() {
-        var baseModel = new BaseModel();
-
-        baseView = new BaseView({
-            model: baseModel
+    document.addEventListener('DOMContentLoaded', function() {
+        var mainRouter = new MainRouter();
+        Backbone.history.start({
+            pushState: true
         });
-    }
-
-    document.addEventListener('DOMContentLoaded', initialize);
+    });
 
 })(this.self || global);
