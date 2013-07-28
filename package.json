@@ -19,7 +19,8 @@
     "grunt-regarde": "~0.1.1",
     "grunt-contrib-livereload": "~0.1.2",
     "bower": "~1.0.0",
-    "grunt-contrib-hogan": "~0.2.2"
+    "grunt-contrib-hogan": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.1"
   },
   "gitHead": "2c508848dc48888fe85f09b657777e0bd4b2a12d"
 }
