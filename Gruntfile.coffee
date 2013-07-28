@@ -12,8 +12,19 @@ module.exports = (grunt) ->
       files: '*'
       tasks: ['livereload']
 
+    hogan:
+      publish:
+        files:
+          "templates/compiled.js": ['templates/*.html']
+        options:
+          namespace: 'T'
+          defaultName: (filename) ->
+            filename.split('/').pop().split('.').shift()
+
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-regarde'
   grunt.loadNpmTasks 'grunt-contrib-livereload'
+  grunt.loadNpmTasks 'grunt-contrib-hogan'
 
+  grunt.registerTask 'compile', ['hogan']
   grunt.registerTask 'server', ['livereload-start', 'connect', 'regarde']

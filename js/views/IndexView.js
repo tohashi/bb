@@ -4,7 +4,6 @@ var IndexView = Backbone.View.extend({
     },
 
     render: function() {
-        var template = Hogan.compile($('#indexTemplate').html());
-        this.$el.html(template.render(this.model.get('templateValues')));
+        this.$el.html(T.index.render(this.model.get('templateValues')));
     }
 });
