@@ -18,6 +18,7 @@ module.exports = (grunt) ->
           "templates/compiled.js": ['templates/*.html']
         options:
           namespace: 'T'
+          amdWrapper: true
           defaultName: (filename) ->
             filename.split('/').pop().split('.').shift()
 
