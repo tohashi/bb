@@ -22,6 +22,13 @@ module.exports = (grunt) ->
           defaultName: (filename) ->
             filename.split('/').pop().split('.').shift()
 
+    jade:
+      dist:
+        options:
+            pretty: true
+        files:
+          "index.html": "index.jade"
+
     watch:
       templates:
         files: './templates/*.html'
@@ -32,6 +39,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-livereload'
   grunt.loadNpmTasks 'grunt-contrib-hogan'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-jade'
 
   grunt.registerTask 'compile', ['hogan']
   grunt.registerTask 'server', ['livereload-start', 'connect', 'regarde']
