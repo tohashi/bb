@@ -1,10 +1,4 @@
-define([
-    'models/index',
-    'views/index'
-], function(
-    Models,
-    Views
-) {
+define(['model', 'view'], function(Models, Views) {
     var MainRouter = Backbone.Router.extend({
         routes: {
             '': 'index',

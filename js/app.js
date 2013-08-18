@@ -20,11 +20,7 @@ requirejs.config({
 });
 
 
-require([
-    'routes/main'
-], function(
-    Router
-) {
+require(['router'], function(Router) {
     var mainRouter = new Router.Main();
     Backbone.history.start({
         pushState: true
