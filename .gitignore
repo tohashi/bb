@@ -1,4 +1,4 @@
 node_modules
 js/libs
 templates/*.js
-index.html
+*.html

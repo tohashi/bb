@@ -27,7 +27,8 @@ module.exports = (grunt) ->
         options:
             pretty: true
         files:
-          "index.html": "index.jade"
+            'index.html': 'index.jade'
+            'templates/index.html': 'templates/index.jade'
 
     watch:
       templates:
@@ -42,4 +43,5 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-jade'
 
   grunt.registerTask 'compile', ['hogan']
-  grunt.registerTask 'server', ['livereload-start', 'connect', 'regarde']
+  grunt.registerTask 'server', ['compile', 'livereload-start', 'connect', 'regarde']
+
