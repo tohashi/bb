@@ -1,18 +1,16 @@
-define(['model', 'view'], function(Models, Views) {
+define(['collection', 'model', 'view'], function(Collection, Model, View) {
     var MainRouter = Backbone.Router.extend({
         routes: {
-            '': 'index',
-            'login': 'login'
+            '': 'index'
         },
 
         index: function() {
-            var indexView = new Views.Index({
-                el: $('#main-content'),
-                model: new Models.Index
+            var tasks = new Collection.Tasks;
+            var taskFormView = new View.TaskForm({
+                el: $('#task-form'),
+                collection: tasks
             });
-        },
-
-        login: function() {}
+        }
     });
 
     return {

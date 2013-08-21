@@ -42,6 +42,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-jade'
 
-  grunt.registerTask 'compile', ['hogan']
+  grunt.registerTask 'compile', ['jade', 'hogan']
   grunt.registerTask 'server', ['compile', 'livereload-start', 'connect', 'regarde']
 

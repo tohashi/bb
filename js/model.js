@@ -1,18 +1,16 @@
 define(['Backbone'], function(Backbone) {
-    var IndexModel = Backbone.Model.extend({
+    var Task = Backbone.Model.extend({
         defaults: {
-            templateValues: {
-                title: 'index',
-                desctiption: 'this is index page'
-            }
+            title: "empty task..."
+            order: tasks.nextOrder(),
+            done: false
         },
-
-        initialize: function() {
+        toggle: function() {
         }
     });
 
     return {
-        Index: IndexModel
+        Task: Task
     }
 });
 
