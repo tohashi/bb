@@ -1,6 +1,6 @@
-define(['Backbone'], function(Backbone) {
+define(['Backbone', 'model'], function(Backbone, Model) {
     var Tasks = Backbone.Collection.extend({
-        model: Task,
+        model: Model.Task,
         done: function() {
             return this.where({done: true});
         },
@@ -8,8 +8,7 @@ define(['Backbone'], function(Backbone) {
             return this.without.call(this, this.done());
         },
         nextOrder: function() {
-            this.length || return 1;
-            return this.last().get('order') + 1;
+            return !this.length ? 1 : this.last().get('order') + 1;
         },
         comparator: 'order'
     });

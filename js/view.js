@@ -1,9 +1,9 @@
 define(['Backbone', 'T'], function(Backbone, T) {
-    var TaskForm = Backbone.View.extend({
+    var TaskView = Backbone.View.extend({
 
         tagName: 'li',
 
-        template: T.task
+        template: T.task,
 
         events: {
             'click .toggle': 'toggleDone',
@@ -19,7 +19,7 @@ define(['Backbone', 'T'], function(Backbone, T) {
         },
 
         render: function() {
-            this.$el.html(this.template.render(this.model.toJSON());
+            this.$el.html(this.template.render(this.model.toJSON()));
             this.$el.toggleClass('done', this.model.get('done'));
             this.input = this.$('.edit');
             return this;
@@ -32,11 +32,13 @@ define(['Backbone', 'T'], function(Backbone, T) {
         edit: function() {
             this.$el.addClass('editing');
             this.input.focus();
-        }
+        },
 
         close: function() {
             var value = this.input.val();
-            value || return this.clear();
+            if (!value) {
+                return this.clear();
+            }
             this.model.save({title: value});
             this.$el.removeClass('editing');
         },
@@ -51,7 +53,7 @@ define(['Backbone', 'T'], function(Backbone, T) {
     });
 
     return {
-        TaskForm: TaskForm
+        Task: TaskView
     }
 });
 
